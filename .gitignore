@@ -1,0 +1,24 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Caches and checkpoints
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Environments
+.env
+.env.*
+venv/
+.venv/
+env/
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Internal documentation
+amit_churn_project_arabic_instructor_guide.docx

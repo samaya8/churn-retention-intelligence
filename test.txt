@@ -1,0 +1,242 @@
+====================================================================
+CHURN PREDICTOR — TEST SAMPLES
+For use with app.py and app2.py (Streamlit apps)
+====================================================================
+How to use:
+- Type each field into the sidebar / form of the app.
+- "Actual Outcome" is the REAL historical result from Churn_Modelling.csv
+  (ground truth) — compare it to what the model predicts.
+- Cases 13 and 14 are made up (not real customers), built from the
+  feature-importance chart to show a clearly SAFE and clearly RISKY
+  profile — good for demoing the gauge chart's full range.
+
+Verified against the saved model: 12 of these 14 cases match the
+model's prediction. Cases 2 and 8 are deliberately kept even though the
+model gets them wrong — XGBoost's recall is ~53% and precision ~67%
+(see the notebook's Evaluation section), so it WILL miss some real
+churners and flag some loyal customers. Good talking point in class.
+====================================================================
+
+
+--------------------------------------------------
+Test Case 1  (France, Male)
+--------------------------------------------------
+Credit Score       : 642
+Geography          : France
+Gender             : Male
+Age                : 48
+Tenure             : 9
+Balance            : 118317.27
+Number of Products : 4
+Has Credit Card?   : No
+Is Active Member?  : No
+Estimated Salary   : 78702.98
+Actual Outcome     : Churned
+
+
+--------------------------------------------------
+Test Case 2  (France, Female)
+--------------------------------------------------
+Credit Score       : 538
+Geography          : France
+Gender             : Female
+Age                : 38
+Tenure             : 8
+Balance            : 88758.95
+Number of Products : 2
+Has Credit Card?   : No
+Is Active Member?  : No
+Estimated Salary   : 28226.15
+Actual Outcome     : Churned
+
+
+--------------------------------------------------
+Test Case 3  (France, Male)
+--------------------------------------------------
+Credit Score       : 632
+Geography          : France
+Gender             : Male
+Age                : 44
+Tenure             : 3
+Balance            : 107764.75
+Number of Products : 1
+Has Credit Card?   : Yes
+Is Active Member?  : No
+Estimated Salary   : 185667.72
+Actual Outcome     : Stayed
+
+
+--------------------------------------------------
+Test Case 4  (France, Female)
+--------------------------------------------------
+Credit Score       : 696
+Geography          : France
+Gender             : Female
+Age                : 33
+Tenure             : 4
+Balance            : 0.00
+Number of Products : 2
+Has Credit Card?   : Yes
+Is Active Member?  : Yes
+Estimated Salary   : 73371.65
+Actual Outcome     : Stayed
+
+
+--------------------------------------------------
+Test Case 5  (Germany, Male)
+--------------------------------------------------
+Credit Score       : 568
+Geography          : Germany
+Gender             : Male
+Age                : 46
+Tenure             : 8
+Balance            : 150836.92
+Number of Products : 1
+Has Credit Card?   : No
+Is Active Member?  : No
+Estimated Salary   : 64516.80
+Actual Outcome     : Churned
+
+
+--------------------------------------------------
+Test Case 6  (Germany, Female)
+--------------------------------------------------
+Credit Score       : 644
+Geography          : Germany
+Gender             : Female
+Age                : 32
+Tenure             : 8
+Balance            : 141528.88
+Number of Products : 1
+Has Credit Card?   : Yes
+Is Active Member?  : Yes
+Estimated Salary   : 167087.34
+Actual Outcome     : Churned
+
+
+--------------------------------------------------
+Test Case 7  (Germany, Male)
+--------------------------------------------------
+Credit Score       : 477
+Geography          : Germany
+Gender             : Male
+Age                : 48
+Tenure             : 8
+Balance            : 129250.00
+Number of Products : 2
+Has Credit Card?   : Yes
+Is Active Member?  : Yes
+Estimated Salary   : 157937.35
+Actual Outcome     : Stayed
+
+
+--------------------------------------------------
+Test Case 8  (Germany, Female)
+--------------------------------------------------
+Credit Score       : 521
+Geography          : Germany
+Gender             : Female
+Age                : 61
+Tenure             : 0
+Balance            : 125193.96
+Number of Products : 1
+Has Credit Card?   : Yes
+Is Active Member?  : Yes
+Estimated Salary   : 109356.53
+Actual Outcome     : Stayed
+
+
+--------------------------------------------------
+Test Case 9  (Spain, Male)
+--------------------------------------------------
+Credit Score       : 501
+Geography          : Spain
+Gender             : Male
+Age                : 43
+Tenure             : 6
+Balance            : 104533.24
+Number of Products : 1
+Has Credit Card?   : No
+Is Active Member?  : No
+Estimated Salary   : 81123.59
+Actual Outcome     : Churned
+
+
+--------------------------------------------------
+Test Case 10  (Spain, Female)
+--------------------------------------------------
+Credit Score       : 420
+Geography          : Spain
+Gender             : Female
+Age                : 55
+Tenure             : 4
+Balance            : 91893.32
+Number of Products : 1
+Has Credit Card?   : Yes
+Is Active Member?  : No
+Estimated Salary   : 144870.28
+Actual Outcome     : Churned
+
+
+--------------------------------------------------
+Test Case 11  (Spain, Male)
+--------------------------------------------------
+Credit Score       : 707
+Geography          : Spain
+Gender             : Male
+Age                : 43
+Tenure             : 10
+Balance            : 0.00
+Number of Products : 2
+Has Credit Card?   : Yes
+Is Active Member?  : No
+Estimated Salary   : 118368.20
+Actual Outcome     : Stayed
+
+
+--------------------------------------------------
+Test Case 12  (Spain, Female)
+--------------------------------------------------
+Credit Score       : 562
+Geography          : Spain
+Gender             : Female
+Age                : 35
+Tenure             : 0
+Balance            : 0.00
+Number of Products : 2
+Has Credit Card?   : Yes
+Is Active Member?  : No
+Estimated Salary   : 119899.52
+Actual Outcome     : Stayed
+
+
+--------------------------------------------------
+Test Case 13  (Synthetic — designed to look SAFE)
+--------------------------------------------------
+Credit Score       : 780
+Geography          : France
+Gender             : Male
+Age                : 28
+Tenure             : 7
+Balance            : 60000.00
+Number of Products : 2
+Has Credit Card?   : Yes
+Is Active Member?  : Yes
+Estimated Salary   : 90000.00
+Actual Outcome     : (synthetic — no ground truth; expect LOW churn probability)
+
+
+--------------------------------------------------
+Test Case 14  (Synthetic — designed to look RISKY)
+--------------------------------------------------
+Credit Score       : 580
+Geography          : Germany
+Gender             : Female
+Age                : 55
+Tenure             : 1
+Balance            : 150000.00
+Number of Products : 1
+Has Credit Card?   : No
+Is Active Member?  : No
+Estimated Salary   : 50000.00
+Actual Outcome     : (synthetic — no ground truth; expect HIGH churn probability)
